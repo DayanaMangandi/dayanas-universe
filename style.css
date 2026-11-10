@@ -1034,3 +1034,12 @@ button {
 .glass-card p:last-child {
     margin-bottom: 0;
 }
+
+#about .glass-card p {
+    margin-bottom: clamp(10px, 1.5vw, 18px);
+    line-height: 1.7;
+}
+
+#about .glass-card p:last-child {
+    margin-bottom: 0;
+}
