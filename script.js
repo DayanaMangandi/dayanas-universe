@@ -325,3 +325,109 @@ document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card 
         console.warn("Invalid project video URL:", videoUrl);
     }
 });
+
+
+/* =========================
+   ENGLISH / SPANISH LANGUAGE SWITCH
+========================= */
+(function () {
+    const languageButton = document.getElementById("languageToggle");
+    const languageButtonText = document.getElementById("languageToggleText");
+    if (!languageButton || !languageButtonText) return;
+
+    const spanishText = [
+        [".status", ["PORTAFOLIO CREATIVO"]],
+        [".profile-info p", ["✧ DESARROLLADORA CREATIVA Y DISEÑADORA ✧"]],
+        [".profile-info span", ["Tus ideas merecen un poco de magia.", "Bienvenido/a a mi universo"]],
+        [".planet-label", ["SOBRE MÍ", "MIS HABILIDADES", "MIS PROYECTOS", "ESTUDIO CREATIVO", "CONTACTO"]],
+        [".home-footer", ["HECHO CON 💜 POR DAYANA NICOLE"]],
+        ["#backButton", ["← VOLVER AL UNIVERSO"]],
+        ["#about .eyebrow", ["CONÓCEME"]],
+        ["#about h2", ["MI <span>HISTORIA</span>"]],
+        ["#about .about-text h3", ["¿Por qué la tecnología?"]],
+        ["#about .about-text p", [
+            "Siempre he sentido curiosidad por cómo funcionan las cosas y por cómo la creatividad puede convertir ideas sencillas en algo significativo. Con el tiempo, descubrí que la tecnología es mucho más que computadoras y pantallas: es una forma de expresarte, explorar posibilidades y crear cosas que pueden marcar la diferencia.",
+            "Mi interés por la tecnología nace de la oportunidad de combinar creatividad e innovación. Disfruto descubrir cómo se construyen los sitios web, experimentar con el diseño digital y aprender cómo distintas herramientas pueden dar vida a una idea. Lo que más me inspira es que la tecnología me permite transformar mi imaginación en algo real.",
+            "Todavía estoy aprendiendo y descubriendo las áreas de la tecnología que más disfruto, pero cada nueva experiencia me motiva a seguir creciendo. Mi objetivo es desarrollar mis habilidades, tener más confianza en lo que creo y utilizar la tecnología como una herramienta para compartir mis ideas con el mundo. ¡Este es solo el comienzo de mi camino!"
+        ]],
+        ["#skills .eyebrow", ["LO QUE PUEDO HACER"]],
+        ["#skills h2", ["MIS <span>HABILIDADES</span>"]],
+        [".skill-card h3", ["Desarrollo web", "Edición de video", "Diseño gráfico"]],
+        [".skill-card > p", ["HTML · CSS · JavaScript", "Edición · Transiciones · Narrativa", "Composición · Creatividad · Diseño visual"]],
+        [".skill-projects-label", ["PROYECTOS", "PROYECTOS", "PROYECTOS"]],
+        [".skill-card li", ["DevBoost", "Señora Sakura", "Linguavision AI", "Entrevista", "Acción de Gracias", "Ediciones de K-pop", "Diseños en Canva", "Ediciones en ibis Paint", "Composiciones digitales de K-pop"]],
+        ["#projects .eyebrow", ["MI TRABAJO DIGITAL"]],
+        ["#projects h2", ["MIS <span>PROYECTOS</span>"]],
+        ["#projects .project-grid h3", ["DevBoost", "Señora Sakura 🌸", "Linguavision AI"]],
+        ["#projects .project-grid p", [
+            "Mi primer proyecto de desarrollo web.",
+            "Señora Sakura es una propuesta de sitio web para una cafetería de inspiración asiática en El Salvador. Combina la estética japonesa con un ambiente moderno y acogedor. El sitio presenta el concepto, el menú y el estilo único de la cafetería, creando un espacio donde la cultura asiática, los postres y la creatividad se unen.",
+            "Linguavision AI es un sitio web innovador que utiliza inteligencia artificial y visión por computadora para reconocer objetos cotidianos mediante una cámara y ayudar a aprender sus nombres en diferentes idiomas. También incluye audio de pronunciación para hacer el aprendizaje más interactivo, práctico y accesible."
+        ]],
+        ["#projects .project-link", ["VER PROYECTO ↗", "VER PROYECTO ↗", "VER PROYECTO ↗"]],
+        ["#studio .eyebrow", ["MI MUNDO CREATIVO"]],
+        ["#studio h2", ["ESTUDIO <span>CREATIVO</span>"]],
+        [".studio-intro p", ["Un espacio donde la creatividad se une con la narrativa. Explora mis videos, ediciones de K-pop y diseños digitales."]],
+        [".studio-filters .filter-btn", ["TODO MI TRABAJO", "VIDEOS", "CANVA", "IBIS PAINT"]],
+        [".studio-card .studio-tag", ["PRODUCCIÓN DE VIDEO", "PRODUCCIÓN DE VIDEO", "EDICIÓN DE VIDEO", "IBIS PAINT", "IBIS PAINT", "IBIS PAINT", "IBIS PAINT", "IBIS PAINT", "IBIS PAINT", "IBIS PAINT", "IBIS PAINT", "IBIS PAINT", "DISEÑO EN CANVA", "DISEÑO EN CANVA", "DISEÑO EN CANVA", "DISEÑO EN CANVA"]],
+        [".studio-card h3", ["Entrevista", "Acción de Gracias", "Ediciones de K-pop", "Edición Suzaizai", "Dahyun", "Rosé y Jennie", "Rosé", "J-Hope", "Morado", "J-Hope y Rosé", "Tres cabezas", "Rosa", "Rosé Amarillo", "Hanni", "Yves", "Rei"]],
+        [".studio-card p", [
+            "Un proyecto audiovisual enfocado en la comunicación, la narrativa y la expresión creativa.",
+            "Un video especial que captura recuerdos, experiencias y momentos inolvidables.",
+            "Ediciones de video creativas inspiradas en el K-pop, la música y la narrativa visual.",
+            "Una composición digital creativa realizada con ibis Paint.",
+            "Una edición digital que explora los colores y la composición visual.",
+            "Una edición inspirada en el K-pop con Rosé y Jennie.",
+            "Una edición creativa de retrato inspirada en Rosé.",
+            "Una composición digital inspirada en J-Hope.",
+            "Una creación digital con temática morada.",
+            "Una edición creativa que reúne a dos artistas musicales.",
+            "Una composición experimental con un estilo visual único.",
+            "Un diseño en tonos rosados con una estética divertida.",
+            "Una composición visual que combina colores, creatividad y diseño digital.",
+            "Un diseño creativo inspirado en Hanni.",
+            "Una composición digital creada con Canva.",
+            "Un diseño visual creativo inspirado en Rei."
+        ]],
+        ["#studio .hire-card h3", ["¿Tienes un proyecto en mente?"]],
+        ["#studio .hire-card p", ["¡Démosle vida a tus ideas!"]],
+        ["#studio .hire-card button", ["TRABAJEMOS JUNTOS ✦"]],
+        ["#contact .eyebrow", ["CONECTEMOS"]],
+        ["#contact h2", ["CONTÁCTAME"]],
+        ["#contact .glass-card h3", ["¡Creemos algo increíble!"]],
+        ["#contact .glass-card p", ["¿Te interesa mi trabajo o quieres colaborar? Me encantaría conocer tus ideas."]],
+        ["#contact .main-button", ["ENVIARME UN CORREO ✉", "VISITAR MI LINKEDIN ↗"]],
+        [".section-footer", ["✦ CADA PROYECTO ES UNA NUEVA ESTRELLA ✦"]]
+    ];
+
+    function setLanguage(language) {
+        const isSpanish = language === "es";
+        document.documentElement.lang = isSpanish ? "es" : "en";
+
+        if (isSpanish) {
+            spanishText.forEach(([selector, values]) => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach((element, index) => {
+                    if (values[index] !== undefined) element.innerHTML = values[index];
+                });
+            });
+            languageButtonText.textContent = "ENGLISH";
+            languageButton.setAttribute("aria-label", "Switch website to English");
+            document.title = "Dayana's Universe | Portafolio Creativo";
+        } else {
+            window.location.reload();
+            return;
+        }
+
+        languageButton.dataset.language = language;
+    }
+
+    languageButton.addEventListener("click", function () {
+        const currentLanguage = languageButton.dataset.language || "en";
+        if (currentLanguage === "en") {
+            setLanguage("es");
+        } else {
+            window.location.reload();
+        }
+    });
+})();
