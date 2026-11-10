@@ -1171,23 +1171,24 @@ a.skill-project-link:hover {
 ========================= */
 .language-toggle {
     position: fixed;
-    top: 22px;
-    right: 5%;
+    top: auto;
+    right: 22px;
+    bottom: 22px;
     z-index: 10000;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 9px;
-    padding: 11px 17px;
+    gap: 6px;
+    padding: 7px 11px;
     border: 1px solid rgba(213, 180, 255, .65);
     border-radius: 999px;
     background: linear-gradient(135deg, rgba(126, 75, 180, .94), rgba(69, 43, 115, .96));
     color: #fff;
     font-family: 'Orbitron', sans-serif;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 700;
-    letter-spacing: 1.2px;
-    box-shadow: 0 0 18px rgba(171, 117, 235, .35), inset 0 1px 0 rgba(255,255,255,.18);
+    letter-spacing: .8px;
+    box-shadow: 0 0 14px rgba(171, 117, 235, .3), inset 0 1px 0 rgba(255,255,255,.18);
     backdrop-filter: blur(12px);
     cursor: pointer;
     transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
@@ -1195,24 +1196,26 @@ a.skill-project-link:hover {
 .language-toggle:hover {
     transform: translateY(-3px);
     background: linear-gradient(135deg, #a875dc, #6540a0);
-    box-shadow: 0 0 25px rgba(190, 145, 255, .6);
+    box-shadow: 0 0 21px rgba(190, 145, 255, .55);
 }
 .language-globe {
     color: #f2dcff;
-    font-size: 14px;
+    font-size: 11px;
 }
 .language-arrow {
     color: #e8d5ff;
-    font-size: 13px;
+    font-size: 10px;
 }
 @media (max-width: 650px) {
     .language-toggle {
-        top: 14px;
-        right: 14px;
-        padding: 9px 12px;
-        font-size: 9px;
+        right: 13px;
+        bottom: 14px;
+        padding: 6px 9px;
+        gap: 5px;
+        font-size: 7px;
     }
-    .top-bar {
-        padding-right: 110px;
+    .language-globe,
+    .language-arrow {
+        font-size: 10px;
     }
 }
