@@ -336,7 +336,7 @@ document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card 
     if (!languageButton || !languageButtonText) return;
 
     const spanishText = [
-        [".status", ["PORTAFOLIO CREATIVO"]],
+        [".status", ['<span class="status-dot"></span>PORTAFOLIO CREATIVO']],
         [".profile-info p", ["✧ DESARROLLADORA CREATIVA Y DISEÑADORA ✧"]],
         [".profile-info span", ["Tus ideas merecen un poco de magia.", "Bienvenido/a a mi universo"]],
         [".planet-label", ["SOBRE MÍ", "MIS HABILIDADES", "MIS PROYECTOS", "ESTUDIO CREATIVO", "CONTACTO"]],
@@ -393,7 +393,7 @@ document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card 
         ["#studio .hire-card p", ["¡Démosle vida a tus ideas!"]],
         ["#studio .hire-card button", ["TRABAJEMOS JUNTOS ✦"]],
         ["#contact .eyebrow", ["CONECTEMOS"]],
-        ["#contact h2", ["CONTÁCTAME"]],
+        ["#contact h2", ["CONTÁCT<span>AME</span>"]],
         ["#contact .glass-card h3", ["¡Creemos algo increíble!"]],
         ["#contact .glass-card p", ["¿Te interesa mi trabajo o quieres colaborar? Me encantaría conocer tus ideas."]],
         ["#contact .main-button", ["ENVIARME UN CORREO ✉", "VISITAR MI LINKEDIN ↗"]],
