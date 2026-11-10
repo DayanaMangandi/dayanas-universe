@@ -1049,7 +1049,7 @@ button {
 ========================= */
 #about .about-card {
     display: grid;
-    grid-template-columns: minmax(190px, 0.72fr) minmax(0, 1.8fr);
+    grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
     align-items: center;
     gap: clamp(28px, 5vw, 58px);
     padding: clamp(25px, 4vw, 48px);
@@ -1061,7 +1061,8 @@ button {
 }
 .about-polaroid {
     width: min(100%, 250px);
-    justify-self: center;
+    justify-self: start;
+    margin-left: 8px;
     padding: 12px 12px 18px;
     background: linear-gradient(145deg, #fffaff, #e9dcff);
     border-radius: 5px;
@@ -1121,5 +1122,9 @@ button {
         grid-template-columns: 1fr;
         gap: 32px;
     }
-    .about-polaroid { width: min(70%, 230px); }
+    .about-polaroid {
+        width: min(70%, 230px);
+        justify-self: center;
+        margin-left: 0;
+    }
 }
