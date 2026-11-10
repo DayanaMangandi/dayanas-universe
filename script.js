@@ -431,3 +431,25 @@ document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card 
         }
     });
 })();
+
+
+/* CONTACT FORM: OPEN A PRE-FILLED EMAIL */
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("contactName").value.trim();
+        const email = document.getElementById("contactEmail").value.trim();
+        const message = document.getElementById("contactMessage").value.trim();
+
+        const subject = encodeURIComponent("Portfolio contact from " + name);
+        const body = encodeURIComponent(
+            "Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message
+        );
+
+        window.location.href =
+            "mailto:dayana.magandi2026@adoc.superate.org?subject=" + subject + "&body=" + body;
+    });
+}
+
