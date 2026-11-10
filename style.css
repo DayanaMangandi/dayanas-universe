@@ -1128,3 +1128,39 @@ button {
         margin-left: 0;
     }
 }
+
+
+/* SKILLS: RELATED PROJECTS */
+.skill-card {
+    display: flex;
+    flex-direction: column;
+}
+.skill-projects {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(201, 166, 255, .2);
+}
+.skill-projects-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #c9a6ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+}
+.skill-projects ul {
+    display: grid;
+    gap: 9px;
+    padding-left: 18px;
+    color: #d1c4e4;
+    font-size: 12px;
+}
+.skill-project-link {
+    color: #e2ccff;
+    text-decoration: none;
+    transition: color .25s ease, text-shadow .25s ease;
+}
+a.skill-project-link:hover {
+    color: white;
+    text-shadow: 0 0 12px #c59bff;
+}
