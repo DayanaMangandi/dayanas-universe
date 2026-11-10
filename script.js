@@ -395,8 +395,10 @@ document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card 
         ["#contact .eyebrow", ["CONECTEMOS"]],
         ["#contact h2", ["CONTÁCT<span>AME</span>"]],
         ["#contact .glass-card h3", ["¡Creemos algo increíble!"]],
-        ["#contact .glass-card p", ["¿Te interesa mi trabajo o quieres colaborar? Me encantaría conocer tus ideas."]],
-        ["#contact .main-button", ["ENVIARME UN CORREO ✉", "VISITAR MI LINKEDIN ↗"]],
+        ["#contact .contact-intro", ["¿Te interesa mi trabajo o quieres colaborar? Me encantaría conocer tus ideas."]],
+        ["#contact .contact-note", ["Se abrirá tu aplicación de correo para que puedas enviar tu mensaje."]],
+        ["#contact .contact-submit", ["Enviar mensaje"]],
+        ["#contact .linkedin-button", ["VISITAR MI LINKEDIN ↗"]],
         [".section-footer", ["✦ CADA PROYECTO ES UNA NUEVA ESTRELLA ✦"]]
     ];
 
@@ -411,6 +413,13 @@ document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card 
                     if (values[index] !== undefined) element.innerHTML = values[index];
                 });
             });
+            const contactName = document.getElementById("contactName");
+            const contactEmail = document.getElementById("contactEmail");
+            const contactMessage = document.getElementById("contactMessage");
+            if (contactName) contactName.placeholder = "Tu nombre";
+            if (contactEmail) contactEmail.placeholder = "Tu correo electrónico";
+            if (contactMessage) contactMessage.placeholder = "Tu mensaje";
+
             languageButtonText.textContent = "ENGLISH";
             languageButton.setAttribute("aria-label", "Switch website to English");
             document.title = "Dayana's Universe | Portafolio Creativo";
