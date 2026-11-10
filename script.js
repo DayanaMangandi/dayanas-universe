@@ -299,3 +299,29 @@ filterButtons.forEach(button => {
     });
 
 });
+
+
+/* =========================
+   OPTIONAL PROJECT VIDEO LINKS
+   Add a URL to data-video-url on a .project-grid .glass-card
+   to display its "WATCH PROJECT VIDEO" link automatically.
+========================= */
+document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card => {
+    const videoUrl = (card.dataset.videoUrl || "").trim();
+    if (!videoUrl) return;
+
+    try {
+        const parsedUrl = new URL(videoUrl);
+        if (parsedUrl.protocol !== "https:" && parsedUrl.protocol !== "http:") return;
+
+        const videoLink = document.createElement("a");
+        videoLink.className = "project-video-link";
+        videoLink.href = parsedUrl.href;
+        videoLink.target = "_blank";
+        videoLink.rel = "noopener noreferrer";
+        videoLink.textContent = "WATCH PROJECT VIDEO ↗";
+        card.appendChild(videoLink);
+    } catch (error) {
+        console.warn("Invalid project video URL:", videoUrl);
+    }
+});
