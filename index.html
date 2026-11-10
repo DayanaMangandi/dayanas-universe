@@ -622,26 +622,33 @@
             <span class="eyebrow">LET'S CONNECT</span>
             <h2>CONTACT <span>ME</span></h2>
 
-            <div class="glass-card">
-
+            <div class="glass-card contact-card">
                 <h3>Let's create something amazing!</h3>
-
-                <p>
+                <p class="contact-intro">
                     Interested in my work or want to collaborate?
                     I'd love to hear about your ideas.
                 </p>
 
-                <a href="mailto:dayana.magandi2026@adoc.superate.org"
-                   class="main-button">
-                    SEND ME AN EMAIL ✉
-                </a>
+                <form id="contactForm" class="contact-form">
+                    <label class="sr-only" for="contactName">Your name</label>
+                    <input id="contactName" name="name" type="text" placeholder="Your Name" required>
 
-                 <a href="https://www.linkedin.com/in/dayanamangandi12?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-                    class="main-button"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    <label class="sr-only" for="contactEmail">Your email</label>
+                    <input id="contactEmail" name="email" type="email" placeholder="Your Email" required>
+
+                    <label class="sr-only" for="contactMessage">Your message</label>
+                    <textarea id="contactMessage" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+                    <button type="submit" class="main-button contact-submit">Send Message</button>
+                    <p class="contact-note">Your email app will open so you can send your message.</p>
+                </form>
+
+                <a href="https://www.linkedin.com/in/dayanamangandi12?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                   class="main-button linkedin-button"
+                   target="_blank"
+                   rel="noopener noreferrer">
                     VISIT MY LINKEDIN ↗
-                 </a>
+                </a>
             </div>
 
         </section>
