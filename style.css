@@ -1025,3 +1025,12 @@ button {
     width: fit-content;
     margin: 35px auto 45px;
 }
+
+.glass-card p {
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+.glass-card p:last-child {
+    margin-bottom: 0;
+}
