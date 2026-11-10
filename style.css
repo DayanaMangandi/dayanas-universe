@@ -1219,3 +1219,16 @@ a.skill-project-link:hover {
         font-size: 10px;
     }
 }
+
+
+/* PROJECT VIDEO PREVIEWS */
+.project-preview {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    margin: 15px 0 20px;
+    border: 1px solid rgba(201, 166, 255, .28);
+    border-radius: 12px;
+    background: rgba(10, 7, 20, .8);
+}
