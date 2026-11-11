@@ -302,32 +302,6 @@ filterButtons.forEach(button => {
 
 
 /* =========================
-   OPTIONAL PROJECT VIDEO LINKS
-   Add a URL to data-video-url on a .project-grid .glass-card
-   to display its "WATCH PROJECT VIDEO" link automatically.
-========================= */
-document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card => {
-    const videoUrl = (card.dataset.videoUrl || "").trim();
-    if (!videoUrl) return;
-
-    try {
-        const parsedUrl = new URL(videoUrl);
-        if (parsedUrl.protocol !== "https:" && parsedUrl.protocol !== "http:") return;
-
-        const videoLink = document.createElement("a");
-        videoLink.className = "project-video-link";
-        videoLink.href = parsedUrl.href;
-        videoLink.target = "_blank";
-        videoLink.rel = "noopener noreferrer";
-        videoLink.textContent = "PROJECT VIDEO ↗";
-        card.appendChild(videoLink);
-    } catch (error) {
-        console.warn("Invalid project video URL:", videoUrl);
-    }
-});
-
-
-/* =========================
    ENGLISH / SPANISH LANGUAGE SWITCH
 ========================= */
 (function () {
@@ -361,6 +335,7 @@ document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card 
         ["#projects .project-video-link", ["VER VIDEO ↗", "VER VIDEO ↗", "VER VIDEO ↗"]],
         ["#projects .repository-pending", ["REPOSITORIO", "REPOSITORIO", "REPOSITORIO"]],
         ["#projects .project-grid h3", ["DevBoost", "Señora Sakura 🌸", "Linguavision AI"]],
+        ["#projects .project-details-link", ["EXPLORAR PROYECTO ↗", "EXPLORAR PROYECTO ↗", "EXPLORAR PROYECTO ↗"]],
         ["#projects .project-grid p", [
             "Mi primer proyecto de desarrollo web.",
             "Señora Sakura es una propuesta de sitio web para una cafetería de inspiración asiática en El Salvador. Combina la estética japonesa con un ambiente moderno y acogedor. El sitio presenta el concepto, el menú y el estilo único de la cafetería, creando un espacio donde la cultura asiática, los postres y la creatividad se unen.",
