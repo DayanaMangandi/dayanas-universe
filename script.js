@@ -387,6 +387,26 @@ filterButtons.forEach(button => {
         [".section-footer", ["✦ CADA PROYECTO ES UNA NUEVA ESTRELLA ✦"]]
     ];
 
+    // Keep the original English content so switching languages never reloads
+    // the page or loses the current screen/scroll position.
+    const originalContent = new Map();
+    spanishText.forEach(([selector]) => {
+        document.querySelectorAll(selector).forEach(element => {
+            if (!originalContent.has(element)) {
+                originalContent.set(element, element.innerHTML);
+            }
+        });
+    });
+
+    const originalPlaceholders = {};
+    ["contactName", "contactEmail", "contactMessage"].forEach(id => {
+        const element = document.getElementById(id);
+        if (element) originalPlaceholders[id] = element.placeholder;
+    });
+
+    const originalButtonText = languageButtonText.textContent;
+    const originalTitle = document.title;
+
     function setLanguage(language) {
         const isSpanish = language === "es";
         document.documentElement.lang = isSpanish ? "es" : "en";
@@ -395,9 +415,12 @@ filterButtons.forEach(button => {
             spanishText.forEach(([selector, values]) => {
                 const elements = document.querySelectorAll(selector);
                 elements.forEach((element, index) => {
-                    if (values[index] !== undefined) element.innerHTML = values[index];
+                    if (values[index] !== undefined) {
+                        element.innerHTML = values[index];
+                    }
                 });
             });
+
             const contactName = document.getElementById("contactName");
             const contactEmail = document.getElementById("contactEmail");
             const contactMessage = document.getElementById("contactMessage");
@@ -409,20 +432,30 @@ filterButtons.forEach(button => {
             languageButton.setAttribute("aria-label", "Switch website to English");
             document.title = "Dayana's Universe | Portafolio Creativo";
         } else {
-            window.location.reload();
-            return;
+            originalContent.forEach((html, element) => {
+                element.innerHTML = html;
+            });
+
+            Object.entries(originalPlaceholders).forEach(([id, placeholder]) => {
+                const element = document.getElementById(id);
+                if (element) element.placeholder = placeholder;
+            });
+
+            languageButtonText.textContent = originalButtonText;
+            languageButton.setAttribute("aria-label", "Switch website to Spanish");
+            document.title = originalTitle;
         }
 
         languageButton.dataset.language = language;
+        languageButton.setAttribute("aria-pressed", String(isSpanish));
     }
+
+    languageButton.dataset.language = "en";
+    languageButton.setAttribute("aria-pressed", "false");
 
     languageButton.addEventListener("click", function () {
         const currentLanguage = languageButton.dataset.language || "en";
-        if (currentLanguage === "en") {
-            setLanguage("es");
-        } else {
-            window.location.reload();
-        }
+        setLanguage(currentLanguage === "en" ? "es" : "en");
     });
 })();
 
