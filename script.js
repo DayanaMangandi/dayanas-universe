@@ -372,7 +372,7 @@ document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card 
             "Linguavision AI utiliza inteligencia artificial y visión por computadora para reconocer objetos cotidianos mediante una cámara y ayudar a aprender sus nombres en diferentes idiomas. El audio de pronunciación hace que la práctica de vocabulario sea más interactiva y accesible."
         ]],
         ["#projects .project-actions .project-link", ["EXPLORAR PROYECTO ↗", "EXPLORAR PROYECTO ↗", "EXPLORAR PROYECTO ↗"]],
-        ["#projects .project-demo-link", ["▶ VER DEMOSTRACIÓN", "▶ VER DEMOSTRACIÓN"]],
+        ["#projects .project-demo-link", ["▶ VER DEMOSTRACIÓN", "▶ VER DEMOSTRACIÓN", "▶ VER DEMOSTRACIÓN"]],
         ["#studio .eyebrow", ["MI MUNDO CREATIVO"]],
         ["#studio h2", ["ESTUDIO <span>CREATIVO</span>"]],
         [".studio-intro p", ["Un espacio donde la creatividad se une con la narrativa. Explora mis videos, ediciones de K-pop y diseños digitales."]],
