@@ -34,25 +34,47 @@ const params = new URLSearchParams(window.location.search);
 const key = params.get("project");
 const project = projectDetails[key];
 const root = document.getElementById("projectDetailContent");
-if (!project) {
-  root.innerHTML = '<section class="project-detail-panel project-detail-content"><h1>Project not found</h1><a class="project-detail-back" href="index.html#projects">Back to projects</a></section>';
-} else {
-  const isSpanish = new URLSearchParams(window.location.search).get("lang") === "es";
+const languageButton = document.getElementById("languageToggle");
+const languageButtonText = document.getElementById("languageToggleText");
+const backLink = document.querySelector(".project-detail-back");
+let currentLanguage = "en";
+
+const categoryEs = {
+  "devboost": "DESARROLLO WEB · PLATAFORMA DIGITAL",
+  "senora-sakura": "DISEÑO WEB · CONCEPTO DE CAFETERÍA",
+  "linguavision": "INTELIGENCIA ARTIFICIAL · EDUCACIÓN"
+};
+
+function renderProjectDetails() {
+  const isSpanish = currentLanguage === "es";
+
+  if (!project) {
+    root.innerHTML = `
+      <section class="project-detail-panel project-detail-content">
+        <h1>${isSpanish ? "Proyecto no encontrado" : "Project not found"}</h1>
+        <a class="project-detail-back" href="index.html#projects">${isSpanish ? "Volver a proyectos" : "Back to projects"}</a>
+      </section>`;
+    document.title = isSpanish ? "Proyecto no encontrado | Dayana's Universe" : "Project not found | Dayana's Universe";
+    return;
+  }
+
   const description = isSpanish && project.descriptionEs ? project.descriptionEs : project.description;
+  const category = isSpanish ? categoryEs[key] : project.category;
+
   root.innerHTML = `
     <article class="project-detail-panel">
       <div class="project-detail-hero">
         <img src="${project.image}" alt="${project.title} preview" onerror="this.style.display='none';this.parentElement.classList.add('image-placeholder')">
       </div>
       <div class="project-detail-content">
-        <span class="project-category">${project.category}</span>
+        <span class="project-category">${category}</span>
         <h1>${project.title}</h1>
         <p class="project-detail-description">${description}</p>
         <div class="project-detail-meta">${project.technologies.map(item => `<span>${item}</span>`).join("")}</div>
         <h2>${isSpanish ? "VIDEO DEL PROYECTO" : "PROJECT VIDEO"}</h2>
         <video class="project-detail-video" controls playsinline preload="metadata">
           <source src="${project.video}" type="video/mp4">
-          Your browser does not support video playback.
+          ${isSpanish ? "Tu navegador no admite la reproducción de video." : "Your browser does not support video playback."}
         </video>
         <div class="project-detail-actions">
           <a href="${project.website}" target="_blank" rel="noopener noreferrer">${isSpanish ? "VISITAR SITIO WEB ↗" : "VISIT WEBSITE ↗"}</a>
@@ -60,5 +82,24 @@ if (!project) {
         </div>
       </div>
     </article>`;
+  document.title = project.title + " | Dayana's Universe";
 }
-document.title = project ? project.title + " | Dayana's Universe" : "Project not found | Dayana's Universe";
+
+function setLanguage(language) {
+  currentLanguage = language;
+  const isSpanish = language === "es";
+  document.documentElement.lang = language;
+  languageButtonText.textContent = isSpanish ? "ENGLISH" : "ESPAÑOL";
+  languageButton.setAttribute("aria-label", isSpanish ? "Switch website to English" : "Switch website to Spanish");
+  languageButton.setAttribute("aria-pressed", String(isSpanish));
+  if (backLink) backLink.textContent = isSpanish ? "← VOLVER A PROYECTOS" : "← BACK TO PROJECTS";
+  renderProjectDetails();
+}
+
+if (languageButton && languageButtonText) {
+  languageButton.addEventListener("click", function () {
+    setLanguage(currentLanguage === "en" ? "es" : "en");
+  });
+}
+
+renderProjectDetails();
