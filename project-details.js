@@ -43,7 +43,6 @@ if (!project) {
     <article class="project-detail-panel">
       <div class="project-detail-hero">
         <img src="${project.image}" alt="${project.title} preview" onerror="this.style.display='none';this.parentElement.classList.add('image-placeholder')">
-        <span class="cover-placeholder">✦ ADD PROJECT IMAGE</span>
       </div>
       <div class="project-detail-content">
         <span class="project-category">${project.category}</span>
