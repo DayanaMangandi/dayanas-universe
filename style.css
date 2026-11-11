@@ -726,14 +726,13 @@ button {
 
 @media (hover: hover) and (pointer: fine) {
 
-    /* Keep the native pointer visible as a reliable fallback. */
-    body {
-        cursor: auto !important;
-    }
-
-    button,
-    a {
-        cursor: pointer !important;
+    /* The rocket fully replaces the native cursor on desktop. */
+    html,
+    body,
+    body *,
+    body *::before,
+    body *::after {
+        cursor: none !important;
     }
 
     #rocket-cursor {
