@@ -364,7 +364,15 @@ document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card 
             "Señora Sakura es una propuesta de sitio web para una cafetería de inspiración asiática en El Salvador. Combina la estética japonesa con un ambiente moderno y acogedor. El sitio presenta el concepto, el menú y el estilo único de la cafetería, creando un espacio donde la cultura asiática, los postres y la creatividad se unen.",
             "Linguavision AI es un sitio web innovador que utiliza inteligencia artificial y visión por computadora para reconocer objetos cotidianos mediante una cámara y ayudar a aprender sus nombres en diferentes idiomas. También incluye audio de pronunciación para hacer el aprendizaje más interactivo, práctico y accesible."
         ]],
-        ["#projects .project-link", ["VER PROYECTO ↗", "VER PROYECTO ↗", "VER PROYECTO ↗"]],
+        ["#projects .project-category", ["DESARROLLO WEB · PLATAFORMA DIGITAL", "DISEÑO WEB · CONCEPTO DE CAFETERÍA", "INTELIGENCIA ARTIFICIAL · EDUCACIÓN"]],
+        ["#projects .project-badge", ["DESARROLLO WEB", "MARCA Y CONCEPTO WEB", "IA Y APRENDIZAJE DE IDIOMAS"]],
+        ["#projects .project-info p", [
+            "DevBoost es un proyecto de desarrollo web creado para explorar cómo las herramientas digitales pueden convertir ideas en experiencias en línea útiles y atractivas.",
+            "Señora Sakura es una propuesta de sitio web para una cafetería de inspiración asiática en El Salvador. Combina la estética japonesa con un ambiente moderno y acogedor, y presenta el concepto, el menú y el estilo único de la cafetería.",
+            "Linguavision AI utiliza inteligencia artificial y visión por computadora para reconocer objetos cotidianos mediante una cámara y ayudar a aprender sus nombres en diferentes idiomas. El audio de pronunciación hace que la práctica de vocabulario sea más interactiva y accesible."
+        ]],
+        ["#projects .project-actions .project-link", ["EXPLORAR PROYECTO ↗", "EXPLORAR PROYECTO ↗", "EXPLORAR PROYECTO ↗"]],
+        ["#projects .project-demo-link", ["▶ VER DEMOSTRACIÓN", "▶ VER DEMOSTRACIÓN"]],
         ["#studio .eyebrow", ["MI MUNDO CREATIVO"]],
         ["#studio h2", ["ESTUDIO <span>CREATIVO</span>"]],
         [".studio-intro p", ["Un espacio donde la creatividad se une con la narrativa. Explora mis videos, ediciones de K-pop y diseños digitales."]],
