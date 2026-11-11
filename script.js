@@ -384,6 +384,22 @@ filterButtons.forEach(button => {
         ["#contact .contact-note", ["Se abrirá tu aplicación de correo para que puedas enviar tu mensaje."]],
         ["#contact .contact-submit", ["Enviar mensaje"]],
         ["#contact .linkedin-button", ["VISITAR MI LINKEDIN ↗"]],
+        [".cv-kicker", ["✦ MI PERFIL PROFESIONAL", "MÁS ALLÁ DE LA TECNOLOGÍA"]],
+        [".cv-copy h3", ["MI <span>CURRÍCULUM</span>"]],
+        [".cv-copy p", ["Explora mi formación académica, habilidades, certificaciones y experiencias en un solo lugar."]],
+        [".cv-view", ["VER MI CV ↗"]],
+        [".cv-download", ["DESCARGAR CV ↓"]],
+        [".volunteering-section h3", ["MI <span>CAMINO EN EL VOLUNTARIADO</span>"]],
+        [".volunteering-intro", ["Experiencias que me han permitido contribuir, conectar con otras personas y generar un impacto positivo."]],
+        [".volunteer-number", ["EXPERIENCIA 01", "EXPERIENCIA 02"]],
+        [".volunteer-card-copy h4", ["Voluntariado en un orfanato", "Voluntariado en un hogar de ancianos"]],
+        [".volunteer-card-copy p", [
+            "Participé en una actividad de voluntariado en un orfanato, donde compartí tiempo con niños, viví momentos alegres y ayudé a crear un ambiente positivo. Esta experiencia fortaleció mi sentido de responsabilidad, amabilidad y compromiso social. Me recordó el valor de apoyar a los demás y generar un impacto positivo en nuestra comunidad.",
+            "Tuve la oportunidad de realizar voluntariado en un hogar de ancianos, donde compartí tiempo con adultos mayores, viví momentos significativos y ofrecí compañía. Esta experiencia me enseñó la importancia de la empatía, el respeto, la paciencia y el cuidado de los demás. Me recordó que incluso los pequeños actos de bondad pueden marcar una gran diferencia."
+        ]],
+        [".projects-intro", ["Una pequeña vista previa de cada idea. Abre un proyecto para explorar su historia, video y detalles."]],
+        [".cover-number", ["01 / DESARROLLO WEB", "02 / DISEÑO WEB", "03 / INTELIGENCIA ARTIFICIAL"]],
+        [".cover-open", ["VER DETALLES ↗", "VER DETALLES ↗", "VER DETALLES ↗"]],
         [".section-footer", ["✦ CADA PROYECTO ES UNA NUEVA ESTRELLA ✦"]]
     ];
 
@@ -457,6 +473,13 @@ filterButtons.forEach(button => {
         const currentLanguage = languageButton.dataset.language || "en";
         setLanguage(currentLanguage === "en" ? "es" : "en");
     });
+
+    // Restore the projects section when returning from a project detail page.
+    const requestedSection = window.location.hash.slice(1);
+    const requestedElement = requestedSection ? document.getElementById(requestedSection) : null;
+    if (requestedElement && requestedElement.classList.contains("content-section")) {
+        openSection(requestedSection);
+    }
 })();
 
 
