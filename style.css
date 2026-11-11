@@ -1592,3 +1592,9 @@ a.skill-project-link:hover {
  .cv-actions { flex-direction:column; }
  .cv-button { width:100%; }
 }
+
+
+/* Keep filtered studio cards truly hidden even when card display styles are applied. */
+.studio-card[hidden] {
+    display: none !important;
+}
