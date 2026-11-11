@@ -382,6 +382,7 @@ filterButtons.forEach(button => {
         ["#contact .glass-card h3", ["¡Creemos algo increíble!"]],
         ["#contact .contact-intro", ["¿Te interesa mi trabajo o quieres colaborar? Me encantaría conocer tus ideas."]],
         ["#contact .contact-note", ["Se abrirá tu aplicación de correo para que puedas enviar tu mensaje."]],
+        [".contact-action-button", ["CONTACTAR POR CORREO ↗", "VISITAR MI GITHUB ↗"]],
         ["#contact .contact-submit", ["Enviar mensaje"]],
         ["#contact .linkedin-button", ["VISITAR MI LINKEDIN ↗"]],
         [".cv-kicker", ["✦ MI PERFIL PROFESIONAL", "MÁS ALLÁ DE LA TECNOLOGÍA"]],
