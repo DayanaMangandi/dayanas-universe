@@ -1592,3 +1592,7 @@ a.skill-project-link:hover {
  .cv-actions { flex-direction:column; }
  .cv-button { width:100%; }
 }
+
+
+/* Planet links on the main galaxy */
+.planet { text-decoration: none; color: inherit; }
