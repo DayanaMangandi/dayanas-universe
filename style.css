@@ -1324,200 +1324,30 @@ a.skill-project-link:hover {
 }
 
 
-/* =========================
-   PROJECT SHOWCASE CARDS
-   Soft lavender / blush palette to complement the galaxy theme
-========================= */
-#projects .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
-    align-items: stretch;
-    gap: clamp(18px, 2.5vw, 28px);
-}
-#projects .project-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    overflow: hidden;
-    border: 1px solid rgba(230, 211, 255, .82);
-    border-radius: 24px;
-    background: linear-gradient(150deg, #fffaff 0%, #f5edff 58%, #fceef7 100%);
-    color: #38234f;
-    box-shadow: 0 18px 42px rgba(10, 4, 25, .28), 0 0 24px rgba(191, 151, 255, .13);
-    transition: transform .3s ease, box-shadow .3s ease;
-}
-#projects .project-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 23px 48px rgba(10, 4, 25, .34), 0 0 30px rgba(191, 151, 255, .24);
-}
-#projects .project-media {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 220px;
-    padding: 32px 22px 26px;
-    overflow: hidden;
-    background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.95), transparent 42%),
-        linear-gradient(135deg, #eadcff, #f8e8f2);
-}
-#projects .project-badge {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    z-index: 2;
-    max-width: calc(100% - 28px);
-    padding: 7px 11px;
-    border: 1px solid rgba(255,255,255,.2);
-    border-radius: 30px;
-    background: #38234f;
-    color: #fff7ff;
-    font: 600 8px 'Orbitron', sans-serif;
-    letter-spacing: .8px;
-    text-align: center;
-}
-#projects .laptop-frame {
-    width: min(100%, 360px);
-    filter: drop-shadow(0 12px 12px rgba(54, 31, 76, .2));
-}
-#projects .laptop-screen {
-    padding: 7px 7px 6px;
-    border: 3px solid #4a355e;
-    border-bottom-width: 5px;
-    border-radius: 12px 12px 5px 5px;
-    background: #291c38;
-}
-#projects .project-preview {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    margin: 0;
-    border: 0;
-    border-radius: 4px;
-    background: #171020;
-    object-fit: contain;
-}
-#projects .laptop-base {
-    width: 112%;
-    height: 9px;
-    margin-left: -6%;
-    border-radius: 0 0 12px 12px;
-    background: linear-gradient(#b9a9c9, #766684 65%, #d9cfe1);
-}
-#projects .project-info {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding: 23px 24px 25px;
-}
-#projects .project-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 13px;
-}
-#projects .project-category {
-    color: #8155a7;
-    font: 700 8px 'Orbitron', sans-serif;
-    letter-spacing: .75px;
-    line-height: 1.6;
-}
-#projects .project-number {
-    flex: 0 0 auto;
-    color: #a88aba;
-    font: 600 13px 'Orbitron', sans-serif;
-}
-#projects .project-info h3 {
-    margin: 0 0 11px;
-    color: #352044;
-    font: 700 clamp(20px, 2vw, 25px) 'Poppins', sans-serif;
-}
-#projects .project-info p {
-    flex: 1;
-    margin: 0;
-    color: #706477;
-    font-size: 12px;
-    line-height: 1.85;
-}
-#projects .project-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px 16px;
-    margin-top: 22px;
-}
-#projects .project-actions a {
+
+/* PROJECT LINKS - ORIGINAL GLASS CARDS */
+#projects .project-video-link,
+#projects .repository-pending {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 36px;
+    margin: 12px 8px 0 0;
     padding: 9px 13px;
-    border-radius: 24px;
+    border: 1px solid rgba(201, 166, 255, .42);
+    border-radius: 22px;
+    color: #e8d6ff;
+    background: rgba(145, 95, 190, .13);
+    font-family: 'Orbitron', sans-serif;
     font-size: 9px;
-    font-weight: 700;
-    letter-spacing: .45px;
+    letter-spacing: .5px;
     text-decoration: none;
-    transition: .25s ease;
 }
-#projects .project-actions .project-link {
-    margin: 0;
-    border: 1px solid #70449a;
-    background: linear-gradient(135deg, #8052aa, #593477);
-    color: #fff;
+#projects .project-video-link:hover {
+    background: rgba(145, 95, 190, .28);
+    box-shadow: 0 0 14px rgba(201, 166, 255, .18);
 }
-#projects .project-actions .project-demo-link {
-    padding-left: 2px;
-    color: #70449a;
-}
-#projects .project-actions a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 16px rgba(79, 45, 105, .17);
-}
-#projects .project-media-placeholder {
-    background:
-        radial-gradient(circle at 50% 40%, rgba(255,255,255,.95), transparent 35%),
-        linear-gradient(135deg, #e6dcff, #f8e5f1);
-}
-#projects .linguavision-preview {
-    display: flex;
-    width: min(100%, 360px);
-    min-height: 174px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    padding: 20px;
-    border: 1px solid rgba(111, 72, 145, .18);
-    border-radius: 13px;
-    background: linear-gradient(145deg, #35204d, #65468b 60%, #9a6eae);
-    color: #fff;
-    text-align: center;
-    box-shadow: 0 12px 25px rgba(57, 32, 78, .2);
-}
-#projects .linguavision-preview strong {
-    font: 700 17px 'Orbitron', sans-serif;
-    letter-spacing: 1px;
-}
-#projects .linguavision-preview > span:not(.lingua-orbit) {
-    color: #e9d9ff;
-    font-size: 8px;
-    letter-spacing: 1.2px;
-}
-#projects .linguavision-preview .lingua-orbit {
-    color: #f4cfff;
-    font-size: 28px;
-    text-shadow: 0 0 18px #f2caff;
-}
-#projects .linguavision-preview .lingua-symbols {
-    font-size: 17px !important;
-    letter-spacing: 5px !important;
-}
-@media (max-width: 650px) {
-    #projects .project-grid { grid-template-columns: 1fr; }
-    #projects .project-media { min-height: 195px; padding: 35px 17px 23px; }
-    #projects .project-info { padding: 21px 19px 23px; }
-    #projects .project-info h3 { font-size: 21px; }
+#projects .repository-pending {
+    color: #bba4d0;
+    border-style: dashed;
+    opacity: .85;
 }
