@@ -726,10 +726,14 @@ button {
 
 @media (hover: hover) and (pointer: fine) {
 
-    body,
+    /* Keep the native pointer visible as a reliable fallback. */
+    body {
+        cursor: auto !important;
+    }
+
     button,
     a {
-        cursor: none !important;
+        cursor: pointer !important;
     }
 
     #rocket-cursor {
