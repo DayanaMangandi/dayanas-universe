@@ -41,7 +41,7 @@ if (!project) {
   const description = isSpanish && project.descriptionEs ? project.descriptionEs : project.description;
   root.innerHTML = `
     <article class="project-detail-panel">
-      <div class="project-detail-hero image-placeholder">
+      <div class="project-detail-hero">
         <img src="${project.image}" alt="${project.title} preview" onerror="this.style.display='none';this.parentElement.classList.add('image-placeholder')">
         <span class="cover-placeholder">✦ ADD PROJECT IMAGE</span>
       </div>
