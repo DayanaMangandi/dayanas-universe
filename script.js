@@ -443,7 +443,7 @@ if (contactForm) {
         );
 
         window.location.href =
-            "mailto:dayana.magandi2026@adoc.superate.org?subject=" + subject + "&body=" + body;
+            "mailto:dayana.torres2026@adoc.superate.org?subject=" + subject + "&body=" + body;
     });
 }
 
