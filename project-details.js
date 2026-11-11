@@ -4,7 +4,7 @@ const projectDetails = {
     category: "WEB DEVELOPMENT · DIGITAL PLATFORM",
     description: "DevBoost was my first web development project. It helped me explore how websites are structured and how design and code work together to create useful digital experiences. This project represents an important step in my learning journey.",
     descriptionEs: "DevBoost fue mi primer proyecto de desarrollo web. Me permitió explorar cómo se estructuran los sitios web y cómo el diseño y el código trabajan juntos para crear experiencias digitales útiles. Este proyecto representa un paso importante en mi camino de aprendizaje.",
-    image: "images/projects/devboost.jpg",
+    image: "images/projects/devboost.png",
     video: "https://res.cloudinary.com/wt6ih2pg/video/upload/v1794354714/MicrosoftTeams-video_1.mp4",
     website: "https://devboost.infinityfreeapp.com/",
     technologies: ["HTML", "CSS", "JavaScript", "Web Development"]
@@ -14,7 +14,7 @@ const projectDetails = {
     category: "WEB DESIGN · CAFÉ CONCEPT",
     description: "Señora Sakura is a website proposal for an Asian-inspired café in El Salvador. It combines Japanese aesthetics with a modern and welcoming atmosphere. The website presents the café concept, menu and visual identity, creating a space where Asian culture, desserts and creativity come together.",
     descriptionEs: "Señora Sakura es una propuesta de sitio web para una cafetería de inspiración asiática en El Salvador. Combina la estética japonesa con un ambiente moderno y acogedor. El sitio presenta el concepto, el menú y la identidad visual de la cafetería, creando un espacio donde la cultura asiática, los postres y la creatividad se unen.",
-    image: "images/projects/senora-sakura.jpg",
+    image: "images/projects/senora-sakura.png",
     video: "https://res.cloudinary.com/wt6ih2pg/video/upload/v1794354706/MicrosoftTeams-video.mp4",
     website: "https://emelymarroquin2026.github.io/Propuesta-Senora-Sakura/",
     technologies: ["HTML", "CSS", "JavaScript", "Web Design"]
@@ -24,7 +24,7 @@ const projectDetails = {
     category: "ARTIFICIAL INTELLIGENCE · EDUCATION",
     description: "Linguavision AI is an interactive website that uses artificial intelligence and computer vision to recognize everyday objects through a camera and help users learn their names in different languages. It also includes pronunciation audio, making language learning more interactive, practical and accessible.",
     descriptionEs: "Linguavision AI es un sitio web interactivo que utiliza inteligencia artificial y visión por computadora para reconocer objetos cotidianos mediante una cámara y ayudar a aprender sus nombres en diferentes idiomas. También incluye audio de pronunciación, haciendo que el aprendizaje sea más interactivo, práctico y accesible.",
-    image: "images/projects/linguavision-ai.jpg",
+    image: "images/projects/linguavision-ai.png",
     video: "https://res.cloudinary.com/wt6ih2pg/video/upload/v1794355831/WhatsApp_Video_2026-11-10_at_11.33.49_AM.mp4",
     website: "https://emelymarroquin2026.github.io/Linguavision/",
     technologies: ["Artificial Intelligence", "Computer Vision", "JavaScript", "Education"]
