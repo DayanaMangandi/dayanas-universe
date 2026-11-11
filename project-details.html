@@ -8,10 +8,46 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="project-detail-page">
+  <div id="rocket-cursor" aria-hidden="true">🚀</div>
   <main class="project-detail-shell">
     <a class="project-detail-back" href="index.html#projects">← BACK TO PROJECTS</a>
     <div id="projectDetailContent"></div>
   </main>
   <script src="project-details.js"></script>
+  <script>
+    // Match the rocket cursor used on the main portfolio page.
+    (function () {
+      const rocket = document.getElementById("rocket-cursor");
+      if (!rocket || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+      let lastSparkTime = 0;
+      window.addEventListener("pointermove", function (event) {
+        rocket.style.left = event.clientX + "px";
+        rocket.style.top = event.clientY + "px";
+        rocket.classList.add("visible");
+
+        const now = performance.now();
+        if (now - lastSparkTime > 45) {
+          lastSparkTime = now;
+          const spark = document.createElement("span");
+          spark.className = "cursor-star";
+          spark.textContent = Math.random() > 0.5 ? "✦" : "✧";
+          spark.style.left = (event.clientX + 10 + Math.random() * 15) + "px";
+          spark.style.top = (event.clientY + 10 + Math.random() * 15) + "px";
+          spark.style.setProperty("--drift-x", (Math.random() * 40 - 20) + "px");
+          spark.style.setProperty("--drift-y", (Math.random() * 40 - 20) + "px");
+          document.body.appendChild(spark);
+          window.setTimeout(function () { spark.remove(); }, 700);
+        }
+      });
+
+      document.querySelectorAll("a, button").forEach(function (element) {
+        element.addEventListener("pointerenter", function () { rocket.classList.add("is-hovering"); });
+        element.addEventListener("pointerleave", function () { rocket.classList.remove("is-hovering"); });
+      });
+      document.addEventListener("pointerleave", function () { rocket.classList.remove("visible"); });
+      document.addEventListener("pointerenter", function () { rocket.classList.add("visible"); });
+    })();
+  </script>
 </body>
 </html>
