@@ -319,7 +319,7 @@ document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card 
         videoLink.href = parsedUrl.href;
         videoLink.target = "_blank";
         videoLink.rel = "noopener noreferrer";
-        videoLink.textContent = "WATCH PROJECT VIDEO ↗";
+        videoLink.textContent = "PROJECT VIDEO ↗";
         card.appendChild(videoLink);
     } catch (error) {
         console.warn("Invalid project video URL:", videoUrl);
@@ -358,6 +358,8 @@ document.querySelectorAll("#projects .project-grid > .glass-card").forEach(card 
         [".skill-card li", ["DevBoost", "Señora Sakura", "Linguavision AI", "Entrevista", "Acción de Gracias", "Ediciones de K-pop", "Diseños en Canva", "Ediciones en ibis Paint", "Composiciones digitales de K-pop"]],
         ["#projects .eyebrow", ["MI TRABAJO DIGITAL"]],
         ["#projects h2", ["MIS <span>PROYECTOS</span>"]],
+        ["#projects .project-video-link", ["VER VIDEO ↗", "VER VIDEO ↗", "VER VIDEO ↗"]],
+        ["#projects .repository-pending", ["REPOSITORIO", "REPOSITORIO", "REPOSITORIO"]],
         ["#projects .project-grid h3", ["DevBoost", "Señora Sakura 🌸", "Linguavision AI"]],
         ["#projects .project-grid p", [
             "Mi primer proyecto de desarrollo web.",
