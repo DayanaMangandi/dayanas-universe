@@ -1543,3 +1543,51 @@ a.skill-project-link:hover {
         width: 100%;
     }
 }
+
+
+/* =========================
+   CV + VOLUNTEERING SHOWCASE
+========================= */
+.cv-showcase {
+    position: relative; display:flex; align-items:center; justify-content:space-between;
+    gap:30px; overflow:hidden; margin:34px 0 42px; padding:clamp(24px,4vw,42px);
+    border:1px solid rgba(190,150,255,.28); border-radius:22px;
+    background:linear-gradient(125deg,rgba(65,39,103,.68),rgba(20,18,48,.88));
+    box-shadow:0 18px 45px rgba(0,0,0,.2), inset 0 0 35px rgba(175,125,255,.06);
+}
+.cv-copy { position:relative; z-index:1; max-width:590px; }
+.cv-kicker,.volunteer-number { color:#c9a7ff; font-size:.72rem; letter-spacing:2px; font-weight:700; }
+.cv-copy h3,.volunteering-section h3 { margin:10px 0 12px; font-family:'Orbitron',sans-serif; color:#fff; letter-spacing:1px; }
+.cv-copy h3 span,.volunteering-section h3 span { color:#c99aff; }
+.cv-copy p,.volunteering-intro { color:rgba(239,231,255,.78); line-height:1.8; }
+.cv-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+.cv-button { display:inline-flex; align-items:center; justify-content:center; padding:12px 19px; border-radius:999px; text-decoration:none; font-size:.76rem; font-weight:700; letter-spacing:.7px; transition:transform .2s,box-shadow .2s; }
+.cv-button:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(174,123,255,.25); }
+.cv-view { color:#211331; background:linear-gradient(120deg,#e1c5ff,#b98aff); }
+.cv-download { color:#eadcff; border:1px solid rgba(207,174,255,.5); background:rgba(255,255,255,.06); }
+.cv-art { flex:0 0 150px; width:150px; height:175px; display:grid; place-items:center; position:relative; border:1px solid rgba(218,190,255,.5); border-radius:15px; background:linear-gradient(145deg,rgba(205,166,255,.25),rgba(65,40,105,.4)); box-shadow:10px 12px 0 rgba(12,8,30,.3); transform:rotate(5deg); }
+.cv-art span { color:#f0ddff; font:700 3.5rem 'Orbitron',sans-serif; text-shadow:0 0 22px #b98aff; }
+.cv-art i,.cv-art b { position:absolute; color:#e4caff; font-size:1.4rem; font-style:normal; }
+.cv-art i { top:15px; right:17px; }.cv-art b { bottom:13px; left:18px; }
+.volunteering-section { margin:42px 0 10px; }
+.volunteering-section h3 { line-height:1.5; }
+.volunteering-intro { max-width:680px; margin:0 0 22px; }
+.volunteer-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+.volunteer-card { overflow:hidden; padding:0; }
+.volunteer-photo { min-height:210px; display:grid; place-items:center; background:radial-gradient(circle at 25% 25%,rgba(193,145,255,.3),transparent 40%),linear-gradient(135deg,#30204e,#17152f); border-bottom:1px solid rgba(200,160,255,.2); }
+.volunteer-photo span { padding:9px 14px; border:1px dashed rgba(224,199,255,.55); border-radius:8px; color:#d9c1ff; font-size:.72rem; letter-spacing:1.5px; }
+.volunteer-card-copy { padding:20px 22px 23px; }
+.volunteer-card-copy h4 { color:#fff; margin:9px 0; font-size:1.05rem; }
+.volunteer-card-copy p { color:rgba(235,225,250,.72); line-height:1.7; margin:0; font-size:.9rem; }
+@media(max-width:650px) {
+ .cv-showcase { align-items:flex-start; }
+ .cv-art { flex-basis:95px; width:95px; height:120px; }
+ .cv-art span { font-size:2.3rem; }
+ .volunteer-grid { grid-template-columns:1fr; }
+}
+@media(max-width:430px) {
+ .cv-showcase { flex-direction:column-reverse; }
+ .cv-art { align-self:flex-end; }
+ .cv-actions { flex-direction:column; }
+ .cv-button { width:100%; }
+}
